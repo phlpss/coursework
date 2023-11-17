@@ -1,32 +1,23 @@
 package com.example.coursework.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
+import javafx.fxml.FXML;
 import java.io.IOException;
-import java.util.Objects;
+
+import static com.example.coursework.controller.util.SceneSwitcher.switchScene;
 
 // Set here all groups
 public class MainPageController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    public void switchToGroupsInCourse(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/groups-in-course.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+    @FXML
+    public void switchToGroupsInCourse(ActionEvent event) throws Exception {
+        switchScene(event, "/fxml/groups-in-course.fxml");
     }
+
+    @FXML
     public void switchToManageGroup(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/manage-group.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        switchScene(event, "/fxml/manage-group.fxml");
     }
+
+
 }

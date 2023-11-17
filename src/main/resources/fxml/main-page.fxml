@@ -10,7 +10,7 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <Button layoutX="317.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToGroupsInCourse" prefHeight="47.0" prefWidth="265.0" text="Groups in course">
+            <Button fx:id="groupsInCourse_Button" layoutX="317.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToGroupsInCourse" prefHeight="47.0" prefWidth="265.0" text="Groups in course">
                <font>
                   <Font size="16.0" />
                </font>

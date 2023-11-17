@@ -11,19 +11,13 @@ public class GroupManager {
      * Відсортувати групи методом Quick sort по кількості студентів.
      */
     List<Group> groups;
+    List<String> courseNames;
     String errorMessage;
 
     public GroupManager(List<Group> groups) {
         this.groups = groups;
-    }
 
-    @Override
-    public String toString() {
-        return "GroupManager{" +
-                "groups=" + groups +
-                '}';
     }
-
     public List<Group> getGroups() {
         return groups;
     }

@@ -9,4 +9,9 @@ module com.example.coursework {
 
     opens com.example.coursework.app to javafx.fxml;
     exports com.example.coursework.app;
+
+    exports com.example.coursework.controller to javafx.fxml;
+    exports com.example.coursework.other to javafx.fxml;
+    opens com.example.coursework.controller to javafx.fxml;
+
 }

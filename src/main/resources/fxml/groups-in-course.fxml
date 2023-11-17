@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.GroupsInCourseController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
          <children>
-            <TextField layoutX="72.0" layoutY="265.0" prefHeight="41.0" prefWidth="291.0" />
-            <Label layoutX="72.0" layoutY="229.0" text="Put down course year:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Button layoutX="72.0" layoutY="374.0" mnemonicParsing="false" onAction="#switchToManageGroup" prefHeight="47.0" prefWidth="291.0" text="Manage particular group" />
-            <ListView layoutX="460.0" layoutY="34.0" prefHeight="531.0" prefWidth="408.0" />
+            <HBox alignment="CENTER" layoutX="61.0" layoutY="43.0" spacing="70.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Put down course year:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="41.0" prefWidth="291.0" promptText="example: 2" />
+                        <ListView prefHeight="406.0" prefWidth="350.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Put down course name:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="41.0" prefWidth="291.0" promptText="example: OOP" />
+                        <ListView prefHeight="406.0" prefWidth="350.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Button layoutX="311.0" layoutY="551.0" mnemonicParsing="false" onAction="#switchToManageGroup" prefHeight="34.0" prefWidth="291.0" text="Manage particular group" />
          </children>
       </AnchorPane>
    </children>
