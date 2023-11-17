@@ -7,6 +7,6 @@ module com.example.coursework {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.coursework to javafx.fxml;
-    exports com.example.coursework;
+    opens com.example.coursework.app to javafx.fxml;
+    exports com.example.coursework.app;
 }
