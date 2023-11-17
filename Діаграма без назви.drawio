@@ -1,14 +1,35 @@
-<mxfile host="app.diagrams.net" modified="2023-11-17T16:35:52.753Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="eZEJY5sCFR1lXjhf3aoK" version="22.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-17T16:42:50.738Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="7xtiG-PrTmEmfgiJo8Jr" version="22.1.2" type="github">
   <diagram name="Сторінка-1" id="VwI4W98Nvbx0bP5Z6B8s">
-    <mxGraphModel dx="500" dy="265" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1235" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="IJKT-Kv0TAyxdW4STO9X-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="IJKT-Kv0TAyxdW4STO9X-1" value="Admin" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="100" y="460" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="IJKT-Kv0TAyxdW4STO9X-2" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="IJKT-Kv0TAyxdW4STO9X-2" value="Переглянути групи в курсі (назва)" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="410" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-1" value="Додати групу до курсу (за роком)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="480" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-3" value="Переглянути групи в курсі (рік)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="340" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-5" value="Змінити куратора" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="620" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-6" value="Дадати студента" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="410" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-7" value="Видалити студента" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="480" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-8" value="Переглянути список студентів в групі" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="340" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qdz7CaBH2GtUTGs7qD9A-9" value="Змінити старосту" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="550" width="120" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
