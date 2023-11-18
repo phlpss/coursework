@@ -5,6 +5,7 @@ import com.example.coursework.other.Group;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -25,6 +26,10 @@ public class GroupRepository {
 
     public List<Group> getGroups() {
         return groups;
+    }
+
+    public List<String> getCourses() {
+        return groups.stream().flatMap(group -> group.getCourses().stream()).distinct().toList();
     }
 
     public Optional<Group> getGroupByName(String name) {

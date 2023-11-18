@@ -1,10 +1,6 @@
 package com.example.coursework.controller;
-
-import com.example.coursework.ObjectFactory;
 import javafx.event.ActionEvent;
-
 import java.io.IOException;
-
 import static com.example.coursework.controller.util.SceneSwitcher.switchScene;
 
 public class ManageGroupController {

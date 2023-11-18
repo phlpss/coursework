@@ -20,6 +20,14 @@ public class Student {
         this.fullName = fullName;
     }
 
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "fullName='" + fullName + '\'' +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,4 +40,7 @@ public class Student {
     public int hashCode() {
         return Objects.hash(fullName);
     }
+
+
+
 }

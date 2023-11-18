@@ -105,12 +105,6 @@ public class Group implements Comparable<Group> {
 
     @Override
     public String toString() {
-        return "Group{" +
-                "name='" + name + '\'' +
-                ", headman=" + headman +
-                ", curator=" + curator +
-                ", students=" + students +
-                ", courses=" + courses +
-                '}';
+        return name;
     }
 }

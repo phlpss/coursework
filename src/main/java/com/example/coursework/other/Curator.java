@@ -10,10 +10,9 @@ public class Curator {
     // each teacher can be curator, if he/she is in list and is not curator now
     private String fullName;
     private Group group;
-    private static final List<String> possibleCurators = new ArrayList<>(
-            Arrays.asList(
+    private static final List<String> possibleCurators = List.of(
                     "Павло Курапов", "Ольга Терендій", "Оксана Грицай", "Тетяна Коротєєва", "Євгенія Левус", "Роман Кутельмах"
-            ));
+            );
 
     public Curator() {
     }
@@ -49,5 +48,12 @@ public class Curator {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    @Override
+    public String toString() {
+        return "Curator{" +
+                "fullName='" + fullName + '\'' +
+                '}';
     }
 }
