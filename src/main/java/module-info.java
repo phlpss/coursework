@@ -6,12 +6,12 @@ module com.example.coursework {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.coursework.app to javafx.fxml;
     exports com.example.coursework.app;
 
     exports com.example.coursework.controller to javafx.fxml;
-    exports com.example.coursework.other to javafx.fxml;
+    exports com.example.coursework.other to javafx.fxml,com.fasterxml.jackson.databind;
     opens com.example.coursework.controller to javafx.fxml;
-
 }

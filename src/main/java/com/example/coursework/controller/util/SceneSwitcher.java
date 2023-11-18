@@ -16,7 +16,6 @@ public class SceneSwitcher {
         Stage stage = (Stage) source.getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(SceneSwitcher.class.getResource(fxmlFile)));
 
-        // Create new scene with same size as current scene
         Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
         stage.setScene(scene);
     }

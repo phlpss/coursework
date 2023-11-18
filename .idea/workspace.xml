@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0a28d60-6cb1-4c40-a373-cdb51e24e300" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/ObjectFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/SceneSwitcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/repository/GroupRepository.java" afterDir="false" />
+    <list default="true" id="f0a28d60-6cb1-4c40-a373-cdb51e24e300" name="Changes" comment="new shit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/util/SimpleJsonParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/curators.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/groups.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/json/simplegroups.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/ObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/app/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/GroupsInCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/GroupsInCourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/ManageGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/ManageGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/GroupManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/GroupManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/QuickSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/SceneSwitcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/GroupManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/other/Curator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/repository/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/repository/GroupRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/groups-in-course.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/groups-in-course.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/main-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main-page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/manage-group.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/manage-group.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +36,7 @@
         <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -49,30 +54,33 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2XcckRJ1d5CeXbyucqM8btU48Y9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/KATERYNKA/Desktop/LPNU/term 3/CouseWork/coursework",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/KATERYNKA/Desktop/LPNU/term 3/ADS&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\KATERYNKA\Desktop\LPNU\term 3\CouseWork\coursework\src\main\resources\fxml" />
@@ -89,6 +97,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.coursework.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleJsonParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.coursework.util.SimpleJsonParser" />
+      <module name="coursework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.coursework.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,6 +134,7 @@
       <list>
         <item itemvalue="Application.com.example.coursework.app.MainApp" />
         <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.SimpleJsonParser" />
       </list>
     </recent_temporary>
   </component>
@@ -133,6 +155,11 @@
       <workItem from="1700055291626" duration="6476000" />
       <workItem from="1700147852277" duration="7192000" />
       <workItem from="1700213075106" duration="12071000" />
+      <workItem from="1700256146300" duration="3967000" />
+      <workItem from="1700299545257" duration="2023000" />
+      <workItem from="1700309542863" duration="144000" />
+      <workItem from="1700309704382" duration="12226000" />
+      <workItem from="1700334683172" duration="4131000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1698932254626</created>
@@ -155,7 +182,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700242189872</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="so far so good">
+      <created>1700256234103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700256234103</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new shit">
+      <created>1700256267642</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700256267642</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +229,34 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="added main parts for UI" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="so far so good" />
+    <MESSAGE value="new shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="new shit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursework/util/SimpleJsonParser.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursework/other/Group.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/coursework/other/Group.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.coursework.other.Group" memberName="students" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
