@@ -11,52 +11,50 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.GroupsInCourseController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
-         <children>
-            <HBox alignment="CENTER" layoutX="61.0" layoutY="43.0" spacing="70.0">
-               <children>
-                  <VBox>
-                     <children>
-                        <Label text="Put down course year:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="courseYear_comboBox" editable="true" onDragEntered="#getGroupsByCourseYear_EnterKey" prefHeight="42.0" prefWidth="349.0" promptText="приклад: 2" />
-                        <ListView fx:id="groupsByCourseYear_ListView" prefHeight="406.0" prefWidth="350.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ListView>
-                     </children>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <Label text="Put down course name:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
-                        <ComboBox fx:id="coursename_comboBox" editable="true" onDragEntered="#getGroupsByCourseName_EnterKey" prefHeight="42.0" prefWidth="349.0" promptText="приклад: Об'єктно-орієнтоване програмування" />
-                        <ListView fx:id="groupsByCourseName_ListView" prefHeight="406.0" prefWidth="350.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </ListView>
-                     </children>
-                  </VBox>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </HBox>
-            <Button layoutX="311.0" layoutY="551.0" mnemonicParsing="false" onAction="#switchToManageGroup" prefHeight="34.0" prefWidth="291.0" text="Manage particular group" />
-         </children>
-      </AnchorPane>
-   </children>
+<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.coursework.controller.GroupsInCourseController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+               prefWidth="900.0">
+      <HBox alignment="CENTER" layoutX="61.0" layoutY="43.0" spacing="70.0">
+         <opaqueInsets>
+            <Insets/>
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+         </padding>
+         <VBox>
+            <Label text="Put down course year:">
+               <font>
+                  <Font size="16.0"/>
+               </font>
+            </Label>
+            <ComboBox fx:id="courseYear_comboBox" editable="true"
+                      onDragEntered="#getGroupsByCourseYear_EnterKey" prefHeight="42.0" prefWidth="349.0"
+                      promptText="приклад: 2"/>
+            <ListView fx:id="groupsByCourseYear_ListView" prefHeight="406.0" prefWidth="350.0">
+               <VBox.margin>
+                  <Insets top="10.0"/>
+               </VBox.margin>
+            </ListView>
+         </VBox>
+         <VBox>
+            <Label text="Put down course name:">
+               <font>
+                  <Font size="16.0"/>
+               </font>
+            </Label>
+            <ComboBox fx:id="coursename_comboBox" editable="true" onAction="#getGroupsByCourseName_EnterKey"
+                      onDragDropped="#getGroupsByCourseName_EnterKey"
+                      onDragEntered="#getGroupsByCourseName_EnterKey" prefHeight="42.0" prefWidth="349.0"
+                      promptText="приклад: Об'єктно-орієнтоване програмування"/>
+            <ListView fx:id="groupsByCourseName_ListView" prefHeight="406.0" prefWidth="350.0">
+               <VBox.margin>
+                  <Insets top="10.0"/>
+               </VBox.margin>
+            </ListView>
+         </VBox>
+      </HBox>
+      <Button layoutX="311.0" layoutY="551.0" mnemonicParsing="false" onAction="#switchToManageGroup"
+              prefHeight="34.0" prefWidth="291.0" text="Manage particular group"/>
+   </AnchorPane>
 </StackPane>
