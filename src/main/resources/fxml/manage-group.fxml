@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -15,20 +16,10 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0">
          <children>
-            <HBox layoutX="184.0" layoutY="77.0" spacing="90.0">
+            <HBox layoutX="143.0" layoutY="151.0" prefWidth="817.0" spacing="90.0">
                <children>
                   <VBox prefWidth="291.0" spacing="38.0">
                      <children>
-                        <VBox>
-                           <children>
-                              <Label text="Put down name of group:">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox prefHeight="41.0" prefWidth="291.0" promptText="example: PZ-22" />
-                           </children>
-                        </VBox>
                         <VBox>
                            <children>
                               <Label text="Choose the new curator:">
@@ -36,7 +27,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox prefHeight="41.0" prefWidth="291.0" promptText="example: Pavlo Kurapov " />
+                              <ComboBox fx:id="newCurator_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: Pavlo Kurapov " />
                            </children>
                         </VBox>
                         <VBox>
@@ -46,7 +37,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
+                              <ComboBox fx:id="newHeadman_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
                            </children>
                         </VBox>
                         <VBox>
@@ -56,7 +47,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
+                              <TextField fx:id="newStudent_TextField" prefHeight="41.0" prefWidth="291.0" text="example: Filip Kateryna " />
                            </children>
                         </VBox>
                         <VBox>
@@ -66,14 +57,11 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
+                              <ComboBox fx:id="removeStudent_ComboBox" accessibleRole="TEXT_FIELD" prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
                            </children>
                         </VBox>
-                      <Button fx:id="UpdateGroupInfo_Button" mnemonicParsing="false" prefHeight="41.0" prefWidth="291.0" text="Update group info" />
+                      <Button fx:id="set_Button" mnemonicParsing="false" onAction="#SetGroupInfo_Action" prefHeight="41.0" prefWidth="291.0" text="SET" />
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -82,6 +70,16 @@
                </children>
             </HBox>
             <Button fx:id="backToMain_Button" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchToMainPage" text="back to main" />
+            <VBox layoutX="367.0" layoutY="50.0">
+               <children>
+                  <Label text="Put down name of group:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="groupName_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: PZ-22" />
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>
