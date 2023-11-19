@@ -1,4 +1,4 @@
-package com.example.coursework;
+package com.example.coursework.util;
 
 //import com.example.coursework.other.GroupService;
 import com.example.coursework.repository.GroupRepository;

@@ -1,16 +1,14 @@
 package com.example.coursework.controller;
 
-import com.example.coursework.ObjectFactory;
+import com.example.coursework.util.ObjectFactory;
 import com.example.coursework.repository.GroupRepository;
-import com.example.coursework.other.Group;
+import com.example.coursework.model.Group;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
-import javafx.scene.input.DragEvent;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -25,11 +23,10 @@ public class GroupsInCourseController {
     @FXML
     public void initialize() {
         List<String> courses = groupRepository.getCourses();
-        coursename_comboBox.setItems(FXCollections.observableArrayList(courses));
+        courseName_comboBox.setItems(FXCollections.observableArrayList(courses));
 
-        List<Integer> years = Arrays.asList(1, 2, 3, 4);
-        ObservableList<Integer> observableYears = FXCollections.observableArrayList(years);
-        courseYear_comboBox.setItems(observableYears);
+        List<String> years = Arrays.asList("1", "2", "3", "4");
+        courseYear_comboBox.setItems(FXCollections.observableArrayList(years));
     }
 
     @FXML
@@ -43,21 +40,21 @@ public class GroupsInCourseController {
     }
 
     @FXML
-    private ComboBox<Integer> courseYear_comboBox;
+    private ComboBox<String> courseYear_comboBox;
 
     @FXML
-    private ComboBox<String> coursename_comboBox;
+    private ComboBox<String> courseName_comboBox;
 
     @FXML
     private ListView<Group> groupsByCourseName_ListView;
 
     @FXML
-    private ListView<?> groupsByCourseYear_ListView;
+    private ListView<Group> groupsByCourseYear_ListView;
 
 
     @FXML
     void getGroupsByCourseName_EnterKey() {
-        String selectedCourse = coursename_comboBox.getSelectionModel().getSelectedItem();
+        String selectedCourse = courseName_comboBox.getSelectionModel().getSelectedItem();
         if (selectedCourse != null) {
             List<Group> groupsByCourseName = groupRepository.getGroupsByCourseName(selectedCourse);
             groupsByCourseName_ListView.getItems().clear();
@@ -68,6 +65,13 @@ public class GroupsInCourseController {
 
     @FXML
     void getGroupsByCourseYear_EnterKey() {
-//        groupRepository.getGroupsByCourseYear(/* course year user chose */);
+        String selectedCourse = courseYear_comboBox.getSelectionModel().getSelectedItem();
+        if (selectedCourse != null) {
+            List<Group> groupsByCourseYear = groupRepository.getGroupsByCourseYear(selectedCourse);
+            groupsByCourseYear_ListView.getItems().clear();
+            groupsByCourseYear_ListView.getItems().addAll(groupsByCourseYear);
+        }
     }
+
+    // TODO: if group was selected in list, and button pressed -> switchToManageGroup and call UpdateGroupInfo_Action
 }

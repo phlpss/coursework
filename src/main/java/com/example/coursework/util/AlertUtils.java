@@ -1,4 +1,4 @@
-package com.example.coursework.other;
+package com.example.coursework.util;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

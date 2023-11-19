@@ -12,6 +12,7 @@ module com.example.coursework {
     exports com.example.coursework.app;
 
     exports com.example.coursework.controller to javafx.fxml;
-    exports com.example.coursework.other to javafx.fxml,com.fasterxml.jackson.databind;
+    exports com.example.coursework.model to javafx.fxml,com.fasterxml.jackson.databind;
     opens com.example.coursework.controller to javafx.fxml;
+    exports com.example.coursework.util to com.fasterxml.jackson.databind, javafx.fxml;
 }

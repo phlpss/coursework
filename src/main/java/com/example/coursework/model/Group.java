@@ -1,6 +1,9 @@
-package com.example.coursework.other;
+package com.example.coursework.model;
+
+import com.example.coursework.util.AlertUtils;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -40,9 +43,17 @@ public class Group implements Comparable<Group> {
     public void addStudent(Student student) {
         students.add(student);
     }
-
+    public void addStudent(String student) {
+        Student newStudent = new Student(student);
+        addStudent(newStudent);
+    }
     public void removeStudent(Student student) {
         students.remove(student);
+    }
+
+    public void removeStudent(String student) {
+        Student studentToRemove = new Student(student);
+        removeStudent(studentToRemove);
     }
 
     private boolean isInGroup(Student student) {
@@ -79,9 +90,13 @@ public class Group implements Comparable<Group> {
             AlertUtils.showErrorAlert("Error Occurred", " ", "There is no student in group to be starosta");
         }
     }
+    public void setHeadmanString(String newHeadmanName) {
+        Student newHeadman = new Student(newHeadmanName);
+        setHeadman(newHeadman);
+    }
 
     public void setCurator(Curator newCurator) {
-        if (newCurator.isPossibleToBeCurator()) {
+        if (newCurator.isInList()) {
             if (this.curator != null) {
                 this.curator.resetGroup();
             }
@@ -90,6 +105,10 @@ public class Group implements Comparable<Group> {
         } else {
             AlertUtils.showErrorAlert("Error Occurred", " ", "This one is already curator in group ");
         }
+    }
+    public void setCuratorString(String newCuratorName) {
+        Curator newCurator = new Curator(newCuratorName);
+        setCurator(newCurator);
     }
 
     public void setStudents(List<Student> students) {
@@ -103,8 +122,20 @@ public class Group implements Comparable<Group> {
         return this.courses;
     }
 
+    public Curator getCurator() {
+        return curator;
+    }
+
     @Override
     public String toString() {
         return name;
+    }
+
+    public List<String> getStudents() {
+        List<String> students = new ArrayList<>();
+        for(Student student : this.students) {
+            students.add(student.getFullName());
+        }
+        return students;
     }
 }

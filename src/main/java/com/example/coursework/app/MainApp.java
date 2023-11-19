@@ -1,7 +1,6 @@
 package com.example.coursework.app;
 
-import com.example.coursework.other.Group;
-import com.example.coursework.repository.GroupRepository;
+import com.example.coursework.model.Group;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Application;
