@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class Student {
     private String fullName;
-    private String groupName;
 
     public Student (){}
 
@@ -15,11 +14,9 @@ public class Student {
     public String getFullName() {
         return fullName;
     }
-
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
 
     @Override
     public String toString() {
@@ -40,7 +37,4 @@ public class Student {
     public int hashCode() {
         return Objects.hash(fullName);
     }
-
-
-
 }

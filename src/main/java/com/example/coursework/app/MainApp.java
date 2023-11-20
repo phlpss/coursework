@@ -28,13 +28,14 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
 
         stage.setTitle("KATERYNCHOS");
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style/style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
     }
 
     public void initializeGroups() throws Exception {
-        String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\src\\main\\resources\\json\\groups.json")));
+        String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\groups.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         List<Group> groups = objectMapper.readValue(content, new TypeReference<>() {});
         groups.forEach(System.out::println);

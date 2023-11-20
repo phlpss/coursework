@@ -8,79 +8,97 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="744.0" prefWidth="1133.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.ManageGroupController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.ManageGroupController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="1133.0">
+      <HBox alignment="TOP_CENTER" layoutX="219.0" prefHeight="710.0" prefWidth="944.0" spacing="90.0" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="-21.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox layoutX="143.0" layoutY="151.0" prefWidth="817.0" spacing="90.0">
+            <VBox spacing="38.0">
                <children>
-                  <VBox prefWidth="291.0" spacing="38.0">
+                  <VBox>
                      <children>
-                        <VBox>
-                           <children>
-                              <Label text="Choose the new curator:">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox fx:id="newCurator_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: Pavlo Kurapov " />
-                           </children>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Label text="Choose the new headman:">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox fx:id="newHeadman_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
-                           </children>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Label text="Add new student:">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="newStudent_TextField" prefHeight="41.0" prefWidth="291.0" text="example: Filip Kateryna " />
-                           </children>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Label text="Remove student:">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox fx:id="removeStudent_ComboBox" accessibleRole="TEXT_FIELD" prefHeight="41.0" prefWidth="291.0" promptText="example: Filip Kateryna " />
-                           </children>
-                        </VBox>
-                      <Button fx:id="set_Button" mnemonicParsing="false" onAction="#SetGroupInfo_Action" prefHeight="41.0" prefWidth="291.0" text="SET" />
+                        <Label text="Put down name of group:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="groupName_ComboBox" editable="true" prefHeight="41.0" prefWidth="291.0" />
                      </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
                   </VBox>
-                  <ListView prefHeight="543.0" prefWidth="383.0" />
+                  <VBox>
+                     <children>
+                        <Label text="Choose the new curator:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="newCurator_ComboBox" editable="true" prefHeight="41.0" prefWidth="291.0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Choose the new headman:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="newHeadman_ComboBox" editable="true" prefHeight="41.0" prefWidth="291.0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Add new student:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newStudent_TextField" prefHeight="41.0" prefWidth="291.0" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Remove student:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="removeStudent_ComboBox" accessibleRole="TEXT_FIELD" editable="true" prefHeight="41.0" prefWidth="291.0" />
+                     </children>
+                  </VBox>
+                <Button fx:id="set_Button" mnemonicParsing="false" onAction="#SetGroupInfo_Action" prefHeight="41.0" prefWidth="291.0" text="SET" />
+                  <Button fx:id="set_Button1" mnemonicParsing="false" onAction="#SaveGroupInfo_Action" prefHeight="41.0" prefWidth="291.0" style="-fx-background-color: #0a8a0a;" text="SAVE" />
                </children>
-            </HBox>
-            <Button fx:id="backToMain_Button" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchToMainPage" text="back to main" />
-            <VBox layoutX="367.0" layoutY="50.0">
-               <children>
-                  <Label text="Put down name of group:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <ComboBox fx:id="groupName_ComboBox" prefHeight="41.0" prefWidth="291.0" promptText="example: PZ-22" />
-               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </VBox>
+            <ListView fx:id="groupInfo_ListView" prefHeight="543.0" prefWidth="383.0" />
          </children>
-      </AnchorPane>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="60.0" />
+         </padding>
+      </HBox>
+      <Button fx:id="backToMain_Button" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchToMainPage" text="back to main" />
+      <VBox alignment="TOP_CENTER" prefHeight="871.0" prefWidth="219.0" spacing="20" style="-fx-background-color: #1e1e1f;">
+         <children>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToMainPage" text="Main Page">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Groups in course">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToManageGroup" text="Manage a group">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
-</StackPane>
+</AnchorPane>

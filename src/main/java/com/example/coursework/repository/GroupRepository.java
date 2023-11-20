@@ -12,16 +12,29 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 public class GroupRepository {
     private final List<Group> groups = initializeGroups();
+    private final String jsonFilePath = "C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\groups.json";
+
 
     private List<Group> initializeGroups() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(new File("C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\src\\main\\resources\\json\\groups.json"), new TypeReference<>() {});
+            return objectMapper.readValue(new File(jsonFilePath), new TypeReference<>() {
+            });
         } catch (IOException e) {
             e.printStackTrace();
-            AlertUtils.showErrorAlert("Error reading file","Error reading file","Error reading file");
+            AlertUtils.showErrorAlert("Error reading file", "Error reading file", "Error reading file");
         }
         return null;
+    }
+
+    public void flushToFile() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writeValue(new File(jsonFilePath), groups);
+        } catch (IOException e) {
+            e.printStackTrace();
+            AlertUtils.showErrorAlert("Error writing to file", e.getMessage(), "Error writing to file");
+        }
     }
 
     public List<Group> getGroups() {
@@ -39,93 +52,42 @@ public class GroupRepository {
 
     public List<String> getStudents(Group group) {
         List<String> students = new ArrayList<>();
-        students.addAll(group.getStudents());
+        students.addAll(group.retrieveStudentsNames());
         return students;
     }
 
     public List<String> getCourses() {
+        assert groups != null;
         return groups.stream().flatMap(group -> group.getCourses().stream()).distinct().toList();
     }
 
     public Optional<Group> getGroupByName(String name) {
+        assert groups != null;
         return groups.stream()
                 .filter(el -> el.getName().equals(name))
                 .findFirst();
     }
 
-//    public List<Group> getGroupsByYear(Integer courseYear) {
-//        return groups.stream()
-//                .filter(el -> el.getCourseYear().equals(courseYear))
-//                .toList();
-//    }
-
     public List<Group> getGroupsByCourseName(String courseName) {
+        assert groups != null;
         return groups.stream()
-                .filter(el -> el.getCourseNames().contains(courseName))
+                .filter(el -> el.getCourses().contains(courseName))
                 .toList();
     }
 
     public List<Group> getGroupsByCourseYear(String selectedCourseYear) {
+        assert groups != null;
         return groups.stream()
                 .filter(group -> {
-                    String groupName = group.getName();String yearPart = groupName.substring(groupName.lastIndexOf('-') + 1);
+                    String groupName = group.getName();
+                    String yearPart = groupName.substring(groupName.lastIndexOf('-') + 1);
                     try {
-                        int year = Integer.parseInt(yearPart);
+                        int year = Character.getNumericValue(yearPart.charAt(0));
                         return year == Integer.parseInt(selectedCourseYear);
                     } catch (NumberFormatException e) {
                         return false;
                     }
                 })
                 .collect(Collectors.toList());
-    }
-
-    public void save(Group group) {
-        var existingGroup = groups.stream()
-                .filter(el -> el.getName().equals(group.getName()))
-                .findFirst();
-        if (existingGroup.isPresent()) {
-            Group existGroup = existingGroup.get();
-            existGroup = group;
-        } else groups.add(group);
-        flushToFile();
-    }
-
-    public List<Group> sortByStudentsAmount() {
-        quickSort(0, groups.size() - 1);
-        return new ArrayList<>(groups);
-    }
-
-    public void quickSort(int begin, int end) {
-        if (begin < end) {
-            int partitionIndex = partition(begin, end);
-
-            quickSort(begin, partitionIndex - 1);
-            quickSort(partitionIndex + 1, end);
-        }
-    }
-
-    private int partition(int begin, int end) {
-        Group pivot = groups.get(end);
-        int i = (begin - 1);
-
-        for (int j = begin; j < end; j++) {
-            if (groups.get(j).compareTo(pivot) <= 0) {
-                i++;
-
-                Group swapTemp = groups.get(i);
-                groups.set(i, groups.get(j));
-                groups.set(j, swapTemp);
-            }
-        }
-
-        Group swapTemp = groups.get(i + 1);
-        groups.set(i + 1, groups.get(end));
-        groups.set(end, swapTemp);
-
-        return i + 1;
-    }
-
-    private void flushToFile() {
-
     }
 }

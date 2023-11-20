@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.MainPageController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.MainPageController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+      <!-- Menu Container -->
+      <VBox alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" minWidth="200" prefHeight="600.0" prefWidth="219.0" spacing="20" style="-fx-background-color: #1e1e1f;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <Button fx:id="groupsInCourse_Button" layoutX="317.0" layoutY="320.0" mnemonicParsing="false" onAction="#switchToGroupsInCourse" prefHeight="47.0" prefWidth="265.0" text="Groups in course">
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Main Page">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="317.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToManageGroup" prefHeight="47.0" prefWidth="265.0" text="Manage particular group">
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Groups in course">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label layoutX="142.0" layoutY="138.0" text="Welcome to the group Manager!">
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToManageGroup" text="Manage a group">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+
+      <!-- Content Container -->
+      <VBox spacing="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="220" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+         <children>
+            <Label text="Welcome to the group Manager!" textFill="#e1e1e1">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="288.0" layoutY="218.0" text="Choose action you want to do:">
+            <Label text="Choose action you want to do:" textFill="#cfcfcf">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
          </children>
-      </AnchorPane>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
    </children>
-</StackPane>
+</AnchorPane>

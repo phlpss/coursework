@@ -17,6 +17,7 @@ public class SceneSwitcher {
         Parent root = FXMLLoader.load(Objects.requireNonNull(SceneSwitcher.class.getResource(fxmlFile)));
 
         Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+        scene.getStylesheets().add(Objects.requireNonNull(SceneSwitcher.class.getResource("/style/style.css")).toExternalForm());
         stage.setScene(scene);
     }
 }
