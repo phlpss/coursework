@@ -18,9 +18,16 @@ import static com.example.coursework.controller.util.SceneSwitcher.switchScene;
 
 public class GroupsInCourseController {
     @FXML
+    void saveAllChanges_OnAction(ActionEvent event) {
+        ManageGroupController controller = (ManageGroupController) event.getSource();
+        controller.SaveGroupInfo_Action(new ActionEvent());
+    }
+
+    @FXML
     public void switchToGroupsInCourse(ActionEvent event) throws Exception {
         switchScene(event, "/fxml/groups-in-course.fxml");
     }
+
     GroupRepository groupRepository = ObjectFactory.groupRepository();
 
     @FXML
@@ -40,6 +47,11 @@ public class GroupsInCourseController {
     @FXML
     public void switchToManageGroup(ActionEvent event) throws IOException {
         switchScene(event, "/fxml/manage-group.fxml");
+    }
+
+    @FXML
+    public void switchToAddGroup(ActionEvent event) throws IOException {
+        switchScene(event, "/fxml/add-group.fxml");
     }
 
     @FXML
@@ -126,4 +138,7 @@ public class GroupsInCourseController {
     }
 
 
+    public void updatePage_OnAction(ActionEvent actionEvent) {
+
+    }
 }

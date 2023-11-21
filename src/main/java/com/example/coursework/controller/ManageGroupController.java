@@ -11,9 +11,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+
 import static com.example.coursework.controller.util.SceneSwitcher.switchScene;
 import static com.example.coursework.model.Curator.getAvailableCurators;
 
@@ -21,9 +23,15 @@ public class ManageGroupController {
     GroupRepository groupRepository = ObjectFactory.groupRepository();
 
     @FXML
+    void saveAllChanges_OnAction(ActionEvent event) {
+        groupRepository.flushToFile();
+    }
+
+    @FXML
     public void switchToMainPage(ActionEvent event) throws IOException {
         switchScene(event, "/fxml/main-page.fxml");
     }
+
     @FXML
     public void switchToGroupsInCourse(ActionEvent event) throws Exception {
         switchScene(event, "/fxml/groups-in-course.fxml");
@@ -32,6 +40,11 @@ public class ManageGroupController {
     @FXML
     public void switchToManageGroup(ActionEvent event) throws IOException {
         switchScene(event, "/fxml/manage-group.fxml");
+    }
+
+    @FXML
+    public void switchToAddGroup(ActionEvent event) throws IOException {
+        switchScene(event, "/fxml/add-group.fxml");
     }
 
     @FXML
@@ -78,11 +91,6 @@ public class ManageGroupController {
                     newHeadman_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
                     removeStudent_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
                 });
-            } else {
-                newCurator_ComboBox.setDisable(true);
-                newHeadman_ComboBox.setDisable(true);
-                removeStudent_ComboBox.setDisable(true);
-                newStudent_TextField.setDisable(true);
             }
         });
     }
@@ -114,6 +122,23 @@ public class ManageGroupController {
     @FXML
     void SaveGroupInfo_Action(ActionEvent event) {
         groupRepository.flushToFile();
+    }
+
+    @FXML
+    void updatePage_OnAction(ActionEvent event) {
+        newCurator_ComboBox.getItems().clear();
+        newHeadman_ComboBox.getItems().clear();
+        removeStudent_ComboBox.getItems().clear();
+        newStudent_TextField.clear();
+
+        Optional<Group> selectedGroup = groupRepository.getGroupByName(groupName_ComboBox.getSelectionModel().getSelectedItem());
+
+        List<String> groupCurators = getAvailableCurators();
+        newCurator_ComboBox.setItems(FXCollections.observableArrayList(groupCurators));
+
+        List<String> groupStudents = groupRepository.getStudents(selectedGroup.get());
+        newHeadman_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
+        removeStudent_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
     }
 
     private void updateGroupCurator(Group group) {
@@ -159,7 +184,7 @@ public class ManageGroupController {
         groupInfo.add("Headman: " + (group.retrieveHeadmanName() != null ? group.retrieveHeadmanName() : "None"));
 
         if (group.retrieveStudentsNames() != null && !group.retrieveStudentsNames().isEmpty()) {
-            groupInfo.add("Students:\n");
+            groupInfo.add("\n");
             groupInfo.addAll(group.retrieveStudentsNames());
         } else {
             groupInfo.add("No students in the group");
