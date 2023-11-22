@@ -1,5 +1,6 @@
 package com.example.coursework.controller;
 
+import com.example.coursework.controller.util.GroupStringConverter;
 import com.example.coursework.util.ObjectFactory;
 import com.example.coursework.repository.GroupRepository;
 import com.example.coursework.model.Group;
@@ -8,8 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Tooltip;
+import javafx.scene.control.cell.TextFieldListCell;
+import javafx.util.StringConverter;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,10 +23,11 @@ import java.util.List;
 import static com.example.coursework.controller.util.SceneSwitcher.switchScene;
 
 public class GroupsInCourseController {
+    GroupRepository groupRepository = ObjectFactory.groupRepository();
+
     @FXML
-    void saveAllChanges_OnAction(ActionEvent event) {
-        ManageGroupController controller = (ManageGroupController) event.getSource();
-        controller.SaveGroupInfo_Action(new ActionEvent());
+    void save_Action(ActionEvent event) {
+        groupRepository.flushToFile();
     }
 
     @FXML
@@ -28,7 +35,11 @@ public class GroupsInCourseController {
         switchScene(event, "/fxml/groups-in-course.fxml");
     }
 
-    GroupRepository groupRepository = ObjectFactory.groupRepository();
+    @FXML
+    void goToUserInstruction_Action(ActionEvent event) throws IOException, URISyntaxException {
+        URI uri = new URI("https://gamma.app/public/--znuav7o8q7lun8u?mode=doc#card-yrkk0j1dt7rp5j6");
+        java.awt.Desktop.getDesktop().browse(uri);
+    }
 
     @FXML
     public void initialize() {
@@ -73,6 +84,7 @@ public class GroupsInCourseController {
             List<Group> groupsByCourseName = groupRepository.getGroupsByCourseName(selectedCourse);
             groupsByCourseName_ListView.getItems().clear();
             groupsByCourseName_ListView.getItems().addAll(groupsByCourseName);
+            updateTooltips(groupsByCourseName_ListView);
         }
     }
 
@@ -83,6 +95,7 @@ public class GroupsInCourseController {
             List<Group> groupsByCourseYear = groupRepository.getGroupsByCourseYear(selectedCourse);
             groupsByCourseYear_ListView.getItems().clear();
             groupsByCourseYear_ListView.getItems().addAll(groupsByCourseYear);
+            updateTooltips(groupsByCourseYear_ListView);
         }
     }
 
@@ -120,7 +133,6 @@ public class GroupsInCourseController {
                 groups.set(j, swapTemp);
             }
         }
-
         Group swapTemp = groups.get(i + 1);
         groups.set(i + 1, groups.get(end));
         groups.set(end, swapTemp);
@@ -137,8 +149,23 @@ public class GroupsInCourseController {
         return null;
     }
 
-
     public void updatePage_OnAction(ActionEvent actionEvent) {
 
     }
+
+    public void updateTooltips(ListView<Group> listView) {
+        listView.setCellFactory(lv -> new TextFieldListCell<>(new GroupStringConverter()) {
+            @Override
+            public void updateItem(Group group, boolean empty) {
+                super.updateItem(group, empty);
+                if (group != null) {
+                    Tooltip tooltip = new Tooltip("Number of Students: " + group.getStudents().size());
+                    setTooltip(tooltip);
+                } else {
+                    setTooltip(null);
+                }
+            }
+        });
+    }
+
 }
