@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-22T14:49:33.422Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="D8rH8ASlOwqeDHB0RwLb" version="22.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-22T14:51:19.705Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="4SD_xo0nLbf3sAoTceKD" version="22.1.3" type="github">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="700" dy="371" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1167" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -92,6 +92,12 @@
             <mxPoint x="1500" y="199.25" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="oSx9Q_DFCNFSH3rTs1IW-39" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;curved=0;" edge="1" parent="1" target="oSx9Q_DFCNFSH3rTs1IW-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1500" y="277.16666666666674" as="sourcePoint" />
+            <mxPoint x="1670" y="277" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="oSx9Q_DFCNFSH3rTs1IW-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
           <mxGeometry x="1490" y="130" width="10" height="420" as="geometry" />
         </mxCell>
@@ -151,11 +157,16 @@
         </mxCell>
         <mxCell id="oSx9Q_DFCNFSH3rTs1IW-32" value="2.1. Обрати курс" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oSx9Q_DFCNFSH3rTs1IW-31">
           <mxGeometry x="0.2926" y="3" relative="1" as="geometry">
-            <mxPoint x="40" as="offset" />
+            <mxPoint x="32" y="-3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="oSx9Q_DFCNFSH3rTs1IW-37" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;curved=0;" edge="1" parent="1" source="oSx9Q_DFCNFSH3rTs1IW-30" target="oSx9Q_DFCNFSH3rTs1IW-4">
+        <mxCell id="oSx9Q_DFCNFSH3rTs1IW-37" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;curved=0;dashed=1;" edge="1" parent="1" source="oSx9Q_DFCNFSH3rTs1IW-30" target="oSx9Q_DFCNFSH3rTs1IW-4">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oSx9Q_DFCNFSH3rTs1IW-38" value="2.3. Відображення" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="oSx9Q_DFCNFSH3rTs1IW-37">
+          <mxGeometry x="-0.3495" y="1" relative="1" as="geometry">
+            <mxPoint x="34" y="-5" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
