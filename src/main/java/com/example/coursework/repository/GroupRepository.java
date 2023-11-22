@@ -1,5 +1,7 @@
 package com.example.coursework.repository;
 
+import com.example.coursework.model.Curator;
+import com.example.coursework.model.Student;
 import com.example.coursework.util.AlertUtils;
 import com.example.coursework.model.Group;
 
@@ -13,7 +15,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 public class GroupRepository {
     private final List<Group> groups = initializeGroups();
     private final String jsonFilePath = "C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\groups.json";
-
 
     private List<Group> initializeGroups() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -90,4 +91,18 @@ public class GroupRepository {
                 })
                 .collect(Collectors.toList());
     }
+
+    public void addGroup(Group group) {
+        groups.add(group);
+    }
+
+    public boolean contains(Group group) {
+        assert groups != null;
+        return groups.contains(group);
+    }
+
+    public boolean contains(String groupName) {
+        return contains(getGroupByName(groupName).get());
+    }
+
 }

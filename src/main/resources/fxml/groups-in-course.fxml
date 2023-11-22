@@ -3,29 +3,32 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.GroupsInCourseController">
-   <VBox alignment="TOP_CENTER" layoutX="258.0" layoutY="-1.0" spacing="25.0" AnchorPane.bottomAnchor="61.60000000000002" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="40.39999999999998" AnchorPane.topAnchor="-1.0">
+<AnchorPane prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.GroupsInCourseController">
+   <VBox alignment="TOP_CENTER" layoutX="258.0" layoutY="-1.0" prefWidth="726.0" spacing="25.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="40.39999999999998" AnchorPane.topAnchor="9.0">
       <padding>
          <Insets top="10.0" />
       </padding>
       <HBox alignment="TOP_CENTER" spacing="25.0">
          <VBox spacing="10.0">
-            <children>
-               <Label text="Рік курсу:">
-                  <font>
-                     <Font size="16.0" />
-                  </font>
-               </Label>
-               <ComboBox fx:id="courseYear_comboBox" editable="true" onAction="#getGroupsByCourseYear_EnterKey" prefHeight="42.0" prefWidth="349.0" />
-               <ListView fx:id="groupsByCourseYear_ListView" prefHeight="560.0" prefWidth="350.0" />
-            </children>
+            <Label text="Рік курсу:">
+               <font>
+                  <Font size="16.0"/>
+               </font>
+            </Label>
+            <ComboBox fx:id="courseYear_comboBox" editable="true" onAction="#getGroupsByCourseYear_EnterKey"
+                      prefHeight="42.0" prefWidth="349.0"/>
+            <ListView fx:id="groupsByCourseYear_ListView" prefHeight="560.0" prefWidth="350.0"/>
          </VBox>
          <VBox spacing="10.0">
             <Label text="Назва курсу:">
@@ -41,29 +44,53 @@
          </padding>
       </HBox>
 
-      <Button mnemonicParsing="false" onAction="#sortGroup_OnAction" prefHeight="34.0" prefWidth="291.0" text="Посортувати групи">
+      <Button mnemonicParsing="false" onAction="#sortGroup_OnAction" prefHeight="144.0" prefWidth="291.0" text="Посортувати групи">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
    </VBox>
-   <VBox alignment="TOP_CENTER" layoutX="-2.0" minWidth="200" prefHeight="812.0" prefWidth="219.0" spacing="20" style="-fx-background-color: #1e1e1f;">
-         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToMainPage" text="Main Page">
+   <VBox alignment="TOP_CENTER" layoutX="-2.0" minWidth="200" prefHeight="812.0" prefWidth="219.0" spacing="20" style="-fx-background-color: #1e1e1f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.topAnchor="0.0">
+         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToMainPage" text="Головна сторінка">
             <font>
                <Font size="16.0" />
             </font>
          </Button>
-         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Groups in course">
+         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Переглянути групи">
             <font>
                <Font size="16.0" />
             </font>
          </Button>
-         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToManageGroup" text="Manage a group">
+         <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToManageGroup" text="Налаштування групи">
             <font>
                <Font size="16.0" />
             </font>
          </Button>
+      <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToAddGroup" text="Додати групу">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <contextMenu>
+            <ContextMenu>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#updatePage_OnAction" text="Оновити" />
+               </items>
+            </ContextMenu>
+         </contextMenu>
+      </Button>
+      <padding>
+         <Insets top="40.0" />
+      </padding>
    </VBox>
+   <MenuBar layoutX="20.0" layoutY="20.0" minHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0">
+      <Menu mnemonicParsing="false" text="Файл">
+         <MenuItem mnemonicParsing="false" onAction="#save_Action" text="Зберегти"/>
+      </Menu>
+      <Menu mnemonicParsing="false" text="Допомога">
+         <MenuItem mnemonicParsing="false" onAction="#goToUserInstruction_Action" text="Інструкція користувача"/>
+      </Menu>
+   </MenuBar>
    <padding>
       <Insets top="10.0" />
    </padding>

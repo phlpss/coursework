@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.coursework.controller.AddGroupController">
+   <children>
+      <HBox alignment="TOP_CENTER" layoutX="219.0" prefHeight="710.0" prefWidth="944.0" spacing="90.0" AnchorPane.bottomAnchor="74.60000000000002" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="-21.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="586.0" prefWidth="291.0" spacing="200.0">
+               <children>
+                  <VBox prefWidth="291.0" spacing="50.0">
+                     <children>
+                        <VBox prefHeight="63.0" prefWidth="123.0">
+                           <children>
+                              <Label text="Введіть назву групи:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="groupName_TextField" prefHeight="41.0" prefWidth="291.0" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Оберіть куратора:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="setCurator_ComboBox" editable="true" prefHeight="41.0" prefWidth="291.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="238.0" prefWidth="291.0" spacing="30.0">
+                     <children>
+                        <Button fx:id="readFile_Button" mnemonicParsing="false" onAction="#GetStudents_Action" prefHeight="41.0" prefWidth="291.0" text="Додати студентів" />
+                        <Button fx:id="set_Button" mnemonicParsing="false" onAction="#AddNewGroup_Action" prefHeight="41.0" prefWidth="291.0" text="Додати групу" />
+                        <Button fx:id="set_Button1" mnemonicParsing="false" onAction="#save_Action" prefHeight="41.0" prefWidth="291.0" style="-fx-background-color: #0a8a0a;" text="Зберегти" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <ListView fx:id="groupInfo_ListView" prefHeight="543.0" prefWidth="383.0" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="60.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="785.0" prefWidth="219.0" spacing="20" style="-fx-background-color: #1e1e1f;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToMainPage" text="Головна сторінка">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToGroupsInCourse" text="Переглянути групи">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToManageGroup" text="Налаштування групи">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#switchToAddGroup" text="Додати групу">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#updatePage_OnAction" text="Оновити" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="40.0" />
+         </padding>
+      </VBox>
+      <MenuBar layoutX="10.0" layoutY="10.0" minHeight="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+               <items>
+
+
+                  <MenuItem mnemonicParsing="false" onAction="#save_Action" text="Зберегти" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Допомога">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#goToUserInstruction_Action" text="Інструкція користувача" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

@@ -230,6 +230,8 @@
     -fx-text-fill: #AFB1B3;
     -fx-min-height: 25;
     min-height: 25;
+    -fx-pref-height: 41;
+    -fx-pref-width: 291;
 }
 .button:focused{
     -fx-border-color: #4e4e4e;
@@ -313,8 +315,8 @@
     border-color: #222222;
     -fx-text-fill: #AFB1B3;
     -fx-highlight-fill: #4e4e4e;
-    -fx-background-color: #1A1A1A;
-    background-color: #1A1A1A;
+    -fx-background-color: #2D2D30;
+    background-color: #2D2D30;
 }
 .text-area:hover{
     -fx-border-color: #3E3E40;
@@ -331,8 +333,8 @@
     -fx-border-width: 0;
     border-width: 0;
     -fx-background-radius: 0;
-    -fx-background-color: #1A1A1A;
-    background-color: #1A1A1A;
+    -fx-background-color: #2D2D30;
+    background-color: #2D2D30;
 }
 .text-area .scroll-bar{
     -fx-background-insets: 0 -0.5 0.5 0;

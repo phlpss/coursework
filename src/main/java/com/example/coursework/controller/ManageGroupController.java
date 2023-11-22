@@ -13,6 +13,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
@@ -120,7 +122,7 @@ public class ManageGroupController {
 
 
     @FXML
-    void SaveGroupInfo_Action(ActionEvent event) {
+    void save_Action(ActionEvent event) {
         groupRepository.flushToFile();
     }
 
@@ -139,6 +141,12 @@ public class ManageGroupController {
         List<String> groupStudents = groupRepository.getStudents(selectedGroup.get());
         newHeadman_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
         removeStudent_ComboBox.setItems(FXCollections.observableArrayList(groupStudents));
+    }
+
+    @FXML
+    void goToUserInstruction_Action(ActionEvent event) throws IOException, URISyntaxException {
+        URI uri = new URI("https://gamma.app/public/--znuav7o8q7lun8u?mode=doc#card-yrkk0j1dt7rp5j6");
+        java.awt.Desktop.getDesktop().browse(uri);
     }
 
     private void updateGroupCurator(Group group) {

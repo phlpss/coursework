@@ -14,21 +14,39 @@ import java.util.List;
 public class Group implements Comparable<Group> {
     private String name;
     private List<Student> students = new ArrayList<>();
+    private Integer numberOfStudents;
     private Student headman;
     private Curator curator;
     private List<String> courses = new ArrayList<>();
 
-    public Group(String name) {
-        this.name = name;
-    }
-
-    //TODO finish method
-    public Group(Group other) {
-        this.name = other.name;
-    }
-
     public Group() {
 
+    }
+
+    public Group(String name, List<Student> students, Integer numberOfStudents, Student headman, Curator curator, List<String> courses) {
+        this.name = name;
+        this.students = students;
+        this.numberOfStudents = numberOfStudents;
+        this.headman = headman;
+        this.curator = curator;
+        this.courses = courses;
+    }
+
+    public Group(Group other) {
+        this.name = other.name;
+        this.students = new ArrayList<>();
+
+        for (Student student : other.students) {
+            this.students.add(new Student(student));
+        }
+        this.numberOfStudents = other.numberOfStudents;
+        this.headman = new Student(other.headman);
+        this.curator = new Curator(other.curator);
+        this.courses = new ArrayList<>(other.courses);
+    }
+
+    public Group(String name) {
+        this.name = name;
     }
 
     public void addStudent(Student student) {
@@ -91,6 +109,10 @@ public class Group implements Comparable<Group> {
         return students;
     }
 
+    public Integer getNumberOfStudents() {
+        return students.size();
+    }
+
     public Student getHeadman() {
         return headman;
     }
@@ -139,6 +161,14 @@ public class Group implements Comparable<Group> {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public void setNumberOfStudents() {
+        this.numberOfStudents = students.size();
+    }
+
+    public void setNumberOfStudents(Integer numberOfStudents) {
+        this.numberOfStudents = numberOfStudents;
     }
 
     public void setCourses(List<String> courses) {

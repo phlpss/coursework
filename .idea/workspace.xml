@@ -4,25 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0a28d60-6cb1-4c40-a373-cdb51e24e300" name="Changes" comment="add dynamic data to drop-down list">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f0a28d60-6cb1-4c40-a373-cdb51e24e300" name="Changes" comment="add new page so user will be able to add new group to list of groups">
+      <change afterPath="$PROJECT_DIR$/courses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/GroupStringConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/add-group.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/groups.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/app/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/app/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/AddGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/AddGroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/GroupsInCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/GroupsInCourseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/ManageGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/ManageGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/controller/util/SceneSwitcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Curator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Curator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/model/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/repository/GroupRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/repository/GroupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/coursework/util/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/coursework/util/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/groups-in-course.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/groups-in-course.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/main-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main-page.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/manage-group.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/manage-group.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/groups.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/simplegroups.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +35,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
-        <option value="package.json" />
         <option value="FxmlFile" />
+        <option value="package.json" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,7 +78,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -173,7 +174,14 @@
       <workItem from="1700309704382" duration="12226000" />
       <workItem from="1700334683172" duration="10832000" />
       <workItem from="1700347399528" duration="4537000" />
-      <workItem from="1700392921042" duration="36937000" />
+      <workItem from="1700392921042" duration="37255000" />
+      <workItem from="1700441506364" duration="1162000" />
+      <workItem from="1700482463553" duration="7160000" />
+      <workItem from="1700493081998" duration="1157000" />
+      <workItem from="1700520385916" duration="2635000" />
+      <workItem from="1700563898268" duration="24692000" />
+      <workItem from="1700636113658" duration="2739000" />
+      <workItem from="1700641066222" duration="14897000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1698932254626</created>
@@ -247,7 +255,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700404491588</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="looks like I have working program!">
+      <option name="closed" value="true" />
+      <created>1700441280357</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700441280357</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add new page so user will be able to add new group to list of groups">
+      <option name="closed" value="true" />
+      <created>1700598558757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700598558757</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +311,9 @@
     <MESSAGE value="add handle to coursename_comboBox" />
     <MESSAGE value="renamed packages" />
     <MESSAGE value="add dynamic data to drop-down list" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dynamic data to drop-down list" />
+    <MESSAGE value="looks like I have working program!" />
+    <MESSAGE value="add new page so user will be able to add new group to list of groups" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new page so user will be able to add new group to list of groups" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -295,5 +321,9 @@
         <PinnedItemInfo parentTag="com.example.coursework.other.Group" memberName="students" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

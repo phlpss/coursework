@@ -38,7 +38,7 @@ public class MainApp extends Application {
         String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\KATERYNKA\\Desktop\\LPNU\\term 3\\CouseWork\\coursework\\groups.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         List<Group> groups = objectMapper.readValue(content, new TypeReference<>() {});
-        groups.forEach(System.out::println);
+//        groups.forEach(System.out::println);
     }
 
     public static void main(String[] args) {

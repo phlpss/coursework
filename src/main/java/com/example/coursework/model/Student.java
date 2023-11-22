@@ -11,6 +11,9 @@ public class Student {
         this.fullName = fullName;
     }
 
+    public Student (Student other) {
+        this.fullName = other.fullName;
+    }
     public String getFullName() {
         return fullName;
     }

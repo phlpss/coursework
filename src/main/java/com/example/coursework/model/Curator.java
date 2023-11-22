@@ -21,6 +21,11 @@ public class Curator {
     public Curator() {
     }
 
+    public Curator(Curator other) {
+        this.fullName = other.fullName;
+        this.group = new Group(other.group);
+    }
+
     @JsonCreator
     public Curator(@JsonProperty("fullName") String fullName) {
         this.fullName = fullName;
@@ -51,19 +56,18 @@ public class Curator {
     public Group getGroup() {
         return group;
     }
-
     public String getFullName() {
         return fullName;
     }
 
     public static List<String> getAvailableCurators() {
-        // Get names of curators who are not assigned to any group
+        // Get names of curators who are currently assigned to a group
         List<String> assignedCurators = allCurators.stream()
                 .filter(curator -> curator.getGroup() != null)
                 .map(Curator::getFullName)
-                .toList();
+                .collect(Collectors.toList());
 
-        // Filter possible curators who are not in the assignedCurators list
+        // Return names from possibleCurators that are not in the assignedCurators list
         return possibleCurators.stream()
                 .filter(possibleCurator -> !assignedCurators.contains(possibleCurator))
                 .collect(Collectors.toList());
